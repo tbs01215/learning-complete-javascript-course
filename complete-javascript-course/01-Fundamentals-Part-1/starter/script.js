@@ -136,34 +136,82 @@
 // }
 // console.log(century);
 
-// 20.Type Conversion and Coercion
-// 20.Type Conversion and Coercion
-// 20.Type Conversion and Coercion
+// // 20.Type Conversion and Coercion
+// // 20.Type Conversion and Coercion
+// // 20.Type Conversion and Coercion
 
-// type conversion
-const inputYear = "1994";
-console.log(Number(inputYear), inputYear); // 1994 "1994"
-console.log(Number(inputYear) + 18); // 2012
+// // type conversion
+// const inputYear = "1994";
+// console.log(Number(inputYear), inputYear); // 1994 "1994"
+// console.log(Number(inputYear) + 18); // 2012
 
-console.log(Number("Jonas")); // NaN
-console.log(typeof NaN); // number
+// console.log(Number("Jonas")); // NaN
+// console.log(typeof NaN); // number
 
-console.log(String(23), 23);
-// type coercion
-// 이건 당연하죠? 23이 string으로 자동 변환됩니다.
-console.log("I am " + 25 + " years old");
-// number 과 string 사이의 + 연산자는 number를 string으로 바꿔줍니다.
+// console.log(String(23), 23);
+// // type coercion
+// // 이건 당연하죠? 23이 string으로 자동 변환됩니다.
+// console.log("I am " + 25 + " years old");
+// // number 과 string 사이의 + 연산자는 number를 string으로 바꿔줍니다.
 
-// + 와 다르게 다른 연산자는 string을 number로 바꿔주네요.
-console.log("23" - "10" - 3); // 10
-console.log("23" * "2"); // 46
-console.log("23" / "2"); // 11.5
-console.log("23" > "18"); // true
+// // + 와 다르게 다른 연산자는 string을 number로 바꿔주네요.
+// console.log("23" - "10" - 3); // 10
+// console.log("23" * "2"); // 46
+// console.log("23" / "2"); // 11.5
+// console.log("23" > "18"); // true
 
-// 처음 보면 욕이 나와야 정상인 js 수수께끼
-let n = "1" + 1;
-n = n - 1;
-console.log(n); // 10
-// 사실 위에서 배운게 그대로지만 우리 뇌는 그걸 인정할 수 없다.. 씌부럴 ㅋㅋㅋㅋ
-console.log("10" - "4" - "3" - 2 + "5"); // holy shit.. 계속 number이었다가 + "5"를 만나자 직전의 계산 결과를 string으로 바꿨네 엌ㅋㅋㅋㅋㅋ
-// 자동 변환이 예상치 못한 버그를 일으킬 수 있단 사실을 기억해두라고..
+// // 처음 보면 욕이 나와야 정상인 js 수수께끼
+// let n = "1" + 1;
+// n = n - 1;
+// console.log(n); // 10
+// // 사실 위에서 배운게 그대로지만 우리 뇌는 그걸 인정할 수 없다.. 씌부럴 ㅋㅋㅋㅋ
+// console.log("10" - "4" - "3" - 2 + "5"); // holy shit.. 계속 number이었다가 + "5"를 만나자 직전의 계산 결과를 string으로 바꿨네 엌ㅋㅋㅋㅋㅋ
+// // 자동 변환이 예상치 못한 버그를 일으킬 수 있단 사실을 기억해두라고..
+
+// // 21. Truthy and Falsy Values
+// // 21. Truthy and Falsy Values
+// // 21. Truthy and Falsy Values
+
+// // 5 falsy values: 0, '', undefined, null, NaN
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean("Jonas"));
+// console.log(Boolean({}));
+// console.log(Boolean(""));
+
+// const money = 100;
+// if (money) {
+//   console.log("Don't spend it all ;)");
+// } else {
+//   console.log("You should get a job!");
+// }
+
+// let height = 0;
+// if (height) {
+//   console.log("YAY! Height is defined");
+// } else {
+//   console.log("Height is UNDEFINED");
+// }
+
+// 22. Equality Operators: == vs. ===
+// 22. Equality Operators: == vs. ===
+// 22. Equality Operators: == vs. ===
+
+const age = "18";
+if (age === 18) console.log("You just became an adult :D (strict)");
+// 예기치 않은 버그를 피하려면 아예 존재하지 않는다고 생각하는 것이 낫다고해
+if (age == 18) console.log("You just became an adult :D (loose)");
+
+const favourite = Number(prompt("What's your favourite number?")); // Number을 씌우지 않으면 string으로 저장됩니다.
+console.log(favourite);
+if (favourite === 23) {
+  console.log("Cool! 23 is an amazing number!");
+} else if (favourite === 7) {
+  console.log("7 is also a cool number");
+} else if (favourite === 9) {
+  console.log("9 is also a cool number");
+} else {
+  console.log("Number is not 23 or 7 or 9");
+}
+
+if (favourite !== 23) console.log("Why not 23?");

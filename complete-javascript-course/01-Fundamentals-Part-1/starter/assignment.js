@@ -25,3 +25,6 @@ if (population > 33) {
 // 23
 // false
 // 1143
+
+// 22. Equality Operators: == vs. ===
+// 다음시간에..
