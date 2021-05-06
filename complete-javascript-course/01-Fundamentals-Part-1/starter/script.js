@@ -193,25 +193,27 @@
 //   console.log("Height is UNDEFINED");
 // }
 
-// 22. Equality Operators: == vs. ===
-// 22. Equality Operators: == vs. ===
-// 22. Equality Operators: == vs. ===
+// // 22. Equality Operators: == vs. ===
+// // 22. Equality Operators: == vs. ===
+// // 22. Equality Operators: == vs. ===
 
-const age = "18";
-if (age === 18) console.log("You just became an adult :D (strict)");
-// 예기치 않은 버그를 피하려면 아예 존재하지 않는다고 생각하는 것이 낫다고해
-if (age == 18) console.log("You just became an adult :D (loose)");
+// const age = "18";
+// if (age === 18) console.log("You just became an adult :D (strict)");
+// // 예기치 않은 버그를 피하려면 아예 존재하지 않는다고 생각하는 것이 낫다고해
+// if (age == 18) console.log("You just became an adult :D (loose)");
 
-const favourite = Number(prompt("What's your favourite number?")); // Number을 씌우지 않으면 string으로 저장됩니다.
-console.log(favourite);
-if (favourite === 23) {
-  console.log("Cool! 23 is an amazing number!");
-} else if (favourite === 7) {
-  console.log("7 is also a cool number");
-} else if (favourite === 9) {
-  console.log("9 is also a cool number");
-} else {
-  console.log("Number is not 23 or 7 or 9");
-}
+// const favourite = Number(prompt("What's your favourite number?")); // Number을 씌우지 않으면 string으로 저장됩니다.
+// console.log(favourite);
+// if (favourite === 23) {
+//   console.log("Cool! 23 is an amazing number!");
+// } else if (favourite === 7) {
+//   console.log("7 is also a cool number");
+// } else if (favourite === 9) {
+//   console.log("9 is also a cool number");
+// } else {
+//   console.log("Number is not 23 or 7 or 9");
+// }
 
-if (favourite !== 23) console.log("Why not 23?");
+// if (favourite !== 23) console.log("Why not 23?");
+
+// 23. Boolean Logic
