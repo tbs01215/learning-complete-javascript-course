@@ -244,5 +244,29 @@ const jinyoung = {
   job: "",
   friends: ["Yeri", "Sohye", "Winter"],
   hasDriversLicense: true,
-  calcAge: "",
+  // calcAge: function () {
+  //   console.log(this); // method가 자신이 속한 object의 property를 argument로서 갖다쓰는법: this
+  //   // 여기서 this란 jinyoung object를 가르키는 것이다.
+  //   return 2021 - this.birthYear;
+  // }, // object properties에 function 끼우기
+  // // 이걸 우리는 method라고 부르기로 했어요.
+
+  calcAge: function () {
+    this.age = 2021 - this.birthYear; // this를 통해 새로운 property를 만들 수도 있습니당.
+    return this.age;
+  },
 };
+
+console.log(jinyoung.calcAge()); // dot notation으로 method 갖다쓰기
+console.log(jinyoung["calcAge"]()); // bracket notation으로 method 갖다쓰기
+console.log(jinyoung.age);
+const hahahoho = {
+  apple: "fruit",
+  hohohaha: {
+    apple: "computer",
+    whatIsApple: function () {
+      console.log(this.apple);
+    },
+  },
+};
+hahahoho.hohohaha.whatIsApple();
