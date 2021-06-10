@@ -2,7 +2,7 @@
 // // 32. Activating Strict Mode
 // // 32. Activating Strict Mode
 "use strict";
-// // strict mode 는 우리가 무언갈 하는 것을 금지하고, 에러를 명시적으로 보여준다
+// // strict mode 는 우리가 무언갈 하는 것을 금지하고, 에   러를 명시적으로 보여준다
 // //
 // let hasDriversLicense = false;
 // const passTest = true;
@@ -260,6 +260,8 @@ const jinyoung = {
 console.log(jinyoung.calcAge()); // dot notation으로 method 갖다쓰기
 console.log(jinyoung["calcAge"]()); // bracket notation으로 method 갖다쓰기
 console.log(jinyoung.age);
+
+// 개인 심화학습
 const hahahoho = {
   apple: "fruit",
   hohohaha: {
