@@ -66,6 +66,28 @@ myCountry.checkIsland = function () {
   this.isIsland = this.neighbours.length === 0 ? true : false;
 };
 
-myCountry.describe();
 myCountry.checkIsland();
-console.log(myCountry);
+
+// 46. Iteration: The for Loop
+
+// 47. Looping Arrays, Breaking and Continuing
+const percentages2 = [];
+for (let i = 0; i <= populations.length; i++) {
+  const perc = percentageOfWorld1(populations[i]);
+  percentages2.push(perc);
+}
+// 48. Looping Backwards and Loops in Loops
+const listOfNeighbours = [
+  ["Canada", "Mexico"],
+  ["Spain"],
+  ["Norway", "Sweden", "Russia"],
+];
+
+// 49. The while Loop
+const percentages3 = [];
+let rhdgurwns = 0;
+while (rhdgurwns <= populations.length) {
+  const perc = percentageOfWorld1(populations[rhdgurwns]);
+  percentages3.push(perc);
+  rhdgurwns++;
+}

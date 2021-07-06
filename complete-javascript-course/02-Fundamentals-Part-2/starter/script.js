@@ -234,41 +234,173 @@
 // jinyoung["instagram"] = `@GeneYoung`;
 // console.log(jinyoung);
 
-// 44. Object Methods
-// 44. Object Methods
-// 44. Object Methods
-const jinyoung = {
-  firstName: "Jinyoung",
-  lastName: "Kim",
-  birthYear: 1994,
-  job: "",
-  friends: ["Yeri", "Sohye", "Winter"],
-  hasDriversLicense: true,
-  // calcAge: function () {
-  //   console.log(this); // method가 자신이 속한 object의 property를 argument로서 갖다쓰는법: this
-  //   // 여기서 this란 jinyoung object를 가르키는 것이다.
-  //   return 2021 - this.birthYear;
-  // }, // object properties에 function 끼우기
-  // // 이걸 우리는 method라고 부르기로 했어요.
+// // 44. Object Methods
+// // 44. Object Methods
+// // 44. Object Methods
+// const jinyoung = {
+//   firstName: "Jinyoung",
+//   lastName: "Kim",
+//   birthYear: 1994,
+//   job: "",
+//   friends: ["Yeri", "Sohye", "Winter"],
+//   hasDriversLicense: true,
+//   // calcAge: function () {
+//   //   console.log(this); // method가 자신이 속한 object의 property를 argument로서 갖다쓰는법: this
+//   //   // 여기서 this란 jinyoung object를 가르키는 것이다.
+//   //   return 2021 - this.birthYear;
+//   // }, // object properties에 function 끼우기
+//   // // 이걸 우리는 method라고 부르기로 했어요.
 
-  calcAge: function () {
-    this.age = 2021 - this.birthYear; // this를 통해 새로운 property를 만들 수도 있습니당.
-    return this.age;
-  },
-};
+//   calcAge: function () {
+//     this.age = 2021 - this.birthYear; // this를 통해 새로운 property를 만들 수도 있습니당.
+//     return this.age;
+//   },
+// };
 
-console.log(jinyoung.calcAge()); // dot notation으로 method 갖다쓰기
-console.log(jinyoung["calcAge"]()); // bracket notation으로 method 갖다쓰기
-console.log(jinyoung.age);
+// console.log(jinyoung.calcAge()); // dot notation으로 method 갖다쓰기
+// console.log(jinyoung["calcAge"]()); // bracket notation으로 method 갖다쓰기
+// console.log(jinyoung.age);
 
-// 개인 심화학습
-const hahahoho = {
-  apple: "fruit",
-  hohohaha: {
-    apple: "computer",
-    whatIsApple: function () {
-      console.log(this.apple);
-    },
-  },
-};
-hahahoho.hohohaha.whatIsApple();
+// // 개인 심화학습
+// const hahahoho = {
+//   apple: "fruit",
+//   hohohaha: {
+//     apple: "computer",
+//     whatIsApple: function () {
+//       console.log(this.apple);
+//     },
+//   },
+// };
+// hahahoho.hohohaha.whatIsApple();
+
+// // 46. Iteration: The for Loop
+// // 46. Iteration: The for Loop
+// // 46. Iteration: The for Loop
+
+// // console.log(`Lifting weights repetition 1🏋️‍♂️`);
+// // console.log(`Lifting weights repetition 2🏋️‍♂️`);
+// // console.log(`Lifting weights repetition 3🏋️‍♂️`);
+// // console.log(`Lifting weights repetition 4🏋️‍♂️`);
+// // console.log(`Lifting weights repetition 5🏋️‍♂️`);
+// // console.log(`Lifting weights repetition 6🏋️‍♂️`);
+// // console.log(`Lifting weights repetition 7🏋️‍♂️`);
+// // console.log(`Lifting weights repetition 8🏋️‍♂️`);
+// // console.log(`Lifting weights repetition 9🏋️‍♂️`);
+// // console.log(`Lifting weights repetition 10🏋️‍♂️`);
+// // console.log(`fuck`);
+
+// // 반복문에는 세가지가 필요하다
+// // 1. 반복의 시작값
+// // 반복문을 제어하는 부분을 rep이라고 하자
+// // 이번엔 아예 변수명을 rep으로 만들고 let으로 선언한다(값이 바뀔 것이니까 const는 안된다)
+
+// // 2. logical condition
+// // 이 부분이 참이라면 반복문은 계속된다
+
+// // 3. 돌아가게 하는 구간. 카운터를 키워서 logical condition의 끝을 향해가도록 하자
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep}🏋️‍♂️`);
+// }
+
+// // 47. Looping Arrays, Breaking and Continuing
+// // 47. Looping Arrays, Breaking and Continuing
+// // 47. Looping Arrays, Breaking and Continuing
+// const jonas = [
+//   "Jonas",
+//   "Schmedtmann",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+//   true,
+// ];
+// const types = [];
+
+// // console.log(jonas[0])
+// // console.log(jonas[1])
+// // ...
+// // console.log(jonas[4])
+// // jonas[5] does NOT exist
+
+// for (let i = 0; i < jonas.length; i++) {
+//   // Reading from jonas array
+//   console.log(jonas[i], typeof jonas[i]);
+
+//   // Filling types array
+//   // types[i] = typeof jonas[i];
+//   types.push(typeof jonas[i]);
+// }
+
+// console.log(types);
+
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//   ages.push(2037 - years[i]);
+// }
+// console.log(ages);
+
+// // continue and break
+// console.log("--- ONLY STRINGS ---");
+// for (let i = 0; i < jonas.length; i++) {
+//   if (typeof jonas[i] !== "string") continue;
+
+//   console.log(jonas[i], typeof jonas[i]);
+// }
+
+// console.log("--- BREAK WITH NUMBER ---");
+// for (let i = 0; i < jonas.length; i++) {
+//   if (typeof jonas[i] === "number") break;
+
+//   console.log(jonas[i], typeof jonas[i]);
+// }
+
+// // 48. Looping Backwards and Loops in Loops
+// // 48. Looping Backwards and Loops in Loops
+// // 48. Looping Backwards and Loops in Loops
+// const jonas = [
+//   "Jonas",
+//   "Schmedtmann",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+//   true,
+// ];
+
+// // 0, 1, ..., 4
+// // 4, 3, ..., 0
+
+// for (let i = jonas.length - 1; i >= 0; i--) {
+//   console.log(i, jonas[i]);
+// }
+
+// for (let exercise = 1; exercise < 4; exercise++) {
+//   console.log(`-------- Starting exercise ${exercise}`);
+
+//   for (let rep = 1; rep < 6; rep++) {
+//     console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♀️`);
+//   }
+// }
+
+// // 49. The while Loop
+// // 49. The while Loop
+// // 49. The while Loop
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep}🏋️‍♂️`);
+// }
+
+// let rep = 1;
+// while (rep <= 10) {
+//   console.log(`Lifting weights repetition ${rep}🏋️‍♂️`);
+//   rep++;
+// }
+
+// // let dice = Math.trunc(Math.random() * 6) + 1;
+
+// // while (dice !== 6) {
+// //   console.log(`You rolled a ${dice}`);
+// //   dice = Math.trunc(Math.random() * 6) + 1;
+// //   if (dice === 6) console.log('Loop is about to end...');
+// // }
