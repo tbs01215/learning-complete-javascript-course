@@ -30,10 +30,12 @@ console.log(document.querySelector('.message').textContent);
 // 예전에 function이 value라고 설명한 적이 있는데, 여기서 딱 그렇게 쓰인 것이다. function은 다른 method의 argument로 쓰일 수 있다.
 // function is also just a value.
 // addEventListener의 모양은 다음과 같다.
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 
-document.querySelector('.number').textContent = secretNumber;
+const displayMessage = function (message) {
+  document.querySelector('.message').textContent = message;
+};
 
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
@@ -41,40 +43,47 @@ document.querySelector('.check').addEventListener('click', function () {
 
   // When there is no input
   if (!guess) {
-    document.querySelector('.message').textContent = '🚫 No number!';
+    displayMessage('🚫 No number!');
 
     // When player wins
   } else if (guess === secretNumber) {
-    document.querySelector('.message').textContent = '🎉 Correnct Number!';
+    displayMessage('🎉 Correnct Number!');
+    document.querySelector('.number').textContent = secretNumber;
 
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
+    let highScore = 0;
+    if (score > highScore) {
+      highScore = score;
+    }
+    document.querySelector('.highscore').textContent = highScore;
 
     // When guess is too high
-  } else if (guess > secretNumber) {
-    if (score > 1) {
-      document.querySelector('.message').textContent = '📈Too high!';
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = '😛 You lost the game!';
-      document.querySelector('body').style.backgroundColor = 'crimson';
-
-      document.querySelector('.score').textContent = 0;
-    }
-    // When guess is too low
-  } else if (guess < secretNumber) {
-    if (score > 1) {
-      document.querySelector('.message').textContent = '📉Too low!';
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = '😛 You lost the game!';
-      document.querySelector('body').style.backgroundColor = 'crimson';
-
-      document.querySelector('.score').textContent = 0;
-    }
   }
+  // else if (guess > secretNumber) {
+  //   if (score > 1) {
+  //     displayMessage('📈Too high!') ;
+  //     score--;
+  //     document.querySelector('.score').textContent = score;
+  //   } else {
+  //     displayMessage('😛 You lost the game!') ;
+  //     document.querySelector('body').style.backgroundColor = 'crimson';
+
+  //     document.querySelector('.score').textContent = 0;
+  //   }
+  //   // When guess is too low
+  // } else if (guess < secretNumber) {
+  //   if (score > 1) {
+  //     displayMessage('📉Too low!') ;
+  //     score--;
+  //     document.querySelector('.score').textContent = score;
+  //   } else {
+  //     displayMessage('😛 You lost the game!') ;
+  //     document.querySelector('body').style.backgroundColor = 'crimson';
+
+  //     document.querySelector('.score').textContent = 0;
+  //   }
+  // }
 });
 // 첫 argument로 주어진 event가 발생할 때 두번쨰 argument의 function(event handler)이 실행된다.
 
@@ -93,3 +102,31 @@ document.querySelector('.check').addEventListener('click', function () {
 // background-color->backgroundColor
 // : #60b347 -> ="#60b347"
 // document.querySelector("body").style.backgroundColor = '#60b347'
+
+// 76. Coding Challenge #1
+// 76. Coding Challenge #1
+// 76. Coding Challenge #1
+
+// Implement a game rest functionality, so that the player can make a new guess!
+// Your tasks:
+// 1. Select the element with the 'again' class and attach a click event handler
+
+const gameReset = function () {
+  // 다시 검정, 랜덤 숫자 설정, 화면 원래대로, 숫자 박스 크기도 그대로, 스코어 20
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').style.width = '15rem';
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.score').textContent = score;
+  displayMessage('Start guessing...');
+  document.querySelector('.guess').value = '';
+  // 단, 하이스코어는 저장.
+};
+
+document.querySelector('.again').addEventListener('click', gameReset);
+
+// 2. In the handler function, restore initial values of the 'score' and 'secretNumber' variables
+// 3. Restore the initial conditions of the message, number, score and guess input fields
+// 4. Also restore the original background color (#222) and number width (15rem)
+// GOOD LUCK �
