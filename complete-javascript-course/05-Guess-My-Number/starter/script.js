@@ -32,7 +32,6 @@ console.log(document.querySelector('.message').textContent);
 // addEventListener의 모양은 다음과 같다.
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
-
 const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
 };
@@ -57,9 +56,20 @@ document.querySelector('.check').addEventListener('click', function () {
       highScore = score;
     }
     document.querySelector('.highscore').textContent = highScore;
-
-    // When guess is too high
+  } else if (guess !== secretNumber) {
+    if (score > 1) {
+      guess > secretNumber
+        ? displayMessage('📈Too high!')
+        : displayMessage('📉Too low!');
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      displayMessage('😛 You lost the game!');
+      document.querySelector('body').style.backgroundColor = 'crimson';
+      document.querySelector('.score').textContent = 0;
+    }
   }
+  //  // When guess is too high
   // else if (guess > secretNumber) {
   //   if (score > 1) {
   //     displayMessage('📈Too high!') ;
